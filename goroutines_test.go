@@ -16,3 +16,15 @@ func TestCreateGoroutines(t *testing.T) {
 
 	time.Sleep(1 * time.Second)
 }
+
+func TampilkanNomer(nomer int) {
+	fmt.Println("Nomer ke ", nomer)
+}
+
+func TestManyGoroutines(t *testing.T) {
+	for i := 0; i < 100000; i++ {
+		go TampilkanNomer(i)
+	}
+
+	time.Sleep(5 * time.Second)
+}
